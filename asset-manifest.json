@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/css/main.289ec76d.css",
+    "main.js": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/js/main.910b4e64.js",
+    "index.html": "/sav-anna.github.io/goit-react-hw-03-image-finder/index.html",
+    "main.289ec76d.css.map": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/css/main.289ec76d.css.map",
+    "main.910b4e64.js.map": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/js/main.910b4e64.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.289ec76d.css",
+    "static/js/main.910b4e64.js"
+  ]
+}
