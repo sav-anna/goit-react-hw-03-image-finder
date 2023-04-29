@@ -5,7 +5,7 @@ import ImageGallery from './ImageGallery/ImageGallery';
 import Loader from './Loader/Loader';
 import Modal from './Modal/Modal';
 import Button from './Button/Button';
-// import ImageGalleryItem from './ImageGalleryItem/ImageGalleryItem';
+
 
 export default class App extends Component {
   state = {
