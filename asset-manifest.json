@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/css/main.289ec76d.css",
-    "main.js": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/js/main.3c80a7e9.js",
+    "main.css": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/css/main.c01288ca.css",
+    "main.js": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/js/main.0016c99b.js",
     "index.html": "/sav-anna.github.io/goit-react-hw-03-image-finder/index.html",
-    "main.289ec76d.css.map": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/css/main.289ec76d.css.map",
-    "main.3c80a7e9.js.map": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/js/main.3c80a7e9.js.map"
+    "main.c01288ca.css.map": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/css/main.c01288ca.css.map",
+    "main.0016c99b.js.map": "/sav-anna.github.io/goit-react-hw-03-image-finder/static/js/main.0016c99b.js.map"
   },
   "entrypoints": [
-    "static/css/main.289ec76d.css",
-    "static/js/main.3c80a7e9.js"
+    "static/css/main.c01288ca.css",
+    "static/js/main.0016c99b.js"
   ]
 }
