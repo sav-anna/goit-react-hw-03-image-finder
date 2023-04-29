@@ -1,26 +1,27 @@
-import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import css from './ImageGalleryItem.module.css';
 
-export default class ImageGalleryItem extends Component {
-  render() {
-    const { id, imageURL, modalURL, tags } = this.props;
-    return (
-      <li className={css.ImageGalleryItem} key={id}>
-        <img
-          className={css.ImageGalleryItem__image}
-          src={imageURL}
-          alt={tags}
-          onClick={() => this.props.onClick(modalURL)}
-        />
-      </li>
-    );
-  }
-}
+const ImageGalleryItem = ({ webformatURL, largeImageURL, tags, openModal }) => {
+  return (
+    <li className={css.ImageGalleryItem}>
+      <img
+        className={css.ImageGalleryItem__image}
+        src={webformatURL}
+        data-large={largeImageURL}
+        alt={tags}
+        onClick={event => {
+          openModal(event.target.dataset.large);
+        }}
+      />
+    </li>
+  );
+};
+
+export default ImageGalleryItem;
 
 ImageGalleryItem.propTypes = {
-  id: PropTypes.number.isRequired,
-  imageURL: PropTypes.string.isRequired,
-  modalURL: PropTypes.string.isRequired,
-  tags: PropTypes.string,
+  webformatURL: PropTypes.string.isRequired,
+  largeImageURL: PropTypes.string.isRequired,
+  tags: PropTypes.string.isRequired,
+  openModal: PropTypes.func.isRequired,
 };

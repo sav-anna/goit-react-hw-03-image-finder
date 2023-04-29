@@ -6,7 +6,6 @@ import Loader from './Loader/Loader';
 import Modal from './Modal/Modal';
 import Button from './Button/Button';
 
-
 export default class App extends Component {
   state = {
     images: [],
@@ -52,20 +51,18 @@ export default class App extends Component {
   };
 
   openModal = largeURL => {
-    this.setState({ modalImage: largeURL });
+    this.setState({ modalImg: largeURL });
     this.toggleModal();
   };
 
   render() {
-    const { images, isLoading, error, showModal, modalImage } = this.state;
+    const { images, isLoading, error, showModal, modalImg } = this.state;
     return (
       <div>
-        {showModal && (
-          <Modal modalURL={modalImage} onClose={this.toggleModal} />
-        )}
+        {showModal && <Modal modalURL={modalImg} onClose={this.toggleModal} />}
         {error && <p>Oops!</p>}
         <Searchbar onSubmit={this.onChangeImages} />
-        <ImageGallery images={images} onClick={this.openModal}></ImageGallery>
+        <ImageGallery images={images} openModal={this.openModal}></ImageGallery>
         {isLoading && <Loader />}
         {images.length > 0 && <Button onClick={this.onLoadMore} />}
       </div>
