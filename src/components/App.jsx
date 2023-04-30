@@ -15,6 +15,7 @@ export default class App extends Component {
     showModal: false,
     modalImage: '',
     error: null,
+    showLoadMoreBTN: false,
   };
   componentDidUpdate(prevProps, prevState) {
     if (prevState.searchImages !== this.state.searchImages) {
@@ -36,13 +37,24 @@ export default class App extends Component {
         this.setState(prevState => ({
           images: [...prevState.images, ...hits],
           page: prevState.page + 1,
+          showLoadMoreBTN: true,
         }));
+        if (hits.length < 12 && hits.length > 0) {
+          alert('You have seen all the pictures');
+          this.setState({ showLoadMoreBTN: false });
+          return;
+        }
+        if (hits.length === 0) {
+          alert('Sorry, we did not find any images');
+          this.setState({ showLoadMoreBTN: false });
+          return;
+        }
       })
       .catch(error => this.setState({ error }))
       .finally(() => this.setState({ isLoading: false }));
   };
 
-  onLoadMore = () => {
+  onLoadMore = images => {
     this.getImages();
   };
 
@@ -56,7 +68,8 @@ export default class App extends Component {
   };
 
   render() {
-    const { images, isLoading, error, showModal, modalImg } = this.state;
+    const { images, isLoading, error, showModal, modalImg, showLoadMoreBTN } =
+      this.state;
     return (
       <div>
         {showModal && <Modal modalURL={modalImg} onClose={this.toggleModal} />}
@@ -64,7 +77,7 @@ export default class App extends Component {
         <Searchbar onSubmit={this.onChangeImages} />
         <ImageGallery images={images} openModal={this.openModal}></ImageGallery>
         {isLoading && <Loader />}
-        {images.length > 0 && <Button onClick={this.onLoadMore} />}
+        {showLoadMoreBTN && <Button onClick={this.onLoadMore} />}
       </div>
     );
   }
